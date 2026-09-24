@@ -1,23 +1,31 @@
-from utils import TAMANHO_TABULEIRO, AGUA,NAVIO, TAMANHOS, FROTA_PADRAO, ACERTO, TIRO_AGUA #adicionando as constantes que eu tinha esquecido
+from utils import (
+    TAMANHO_TABULEIRO, COLUNAS, AGUA, NAVIO, ACERTO, AGUA_ACERTADA,
+    TAMANHO_NAVIO, TAMANHO_FROTA
+) #adicionando as constantes que eu tinha esquecido
 from navios import Navio
 import random
 
 class Tabuleiro:
 
     def __init__(self):
-        self.grade = [[AGUA for _ in range(TAMANHO_TABULEIRO)] for _ in range(TAMANHO_TABULEIRO)]
+        self.grade = [
+            [AGUA for _ in range(TAMANHO_TABULEIRO)]
+            for _ in range(TAMANHO_TABULEIRO)
+        ]
         self.navios = []
 
     def pode_posicionar(self, posicoes):
+
         for linha, coluna in posicoes:
-            if not (0 <= linha < TAMANHO_TABULEIRO and 0 <= coluna < TAMANHO_TABULEIRO):
+            if not (0 <= linha < TAMANHO_TABULEIRO
+                    and 0 <= coluna < TAMANHO_TABULEIRO):
                 return False
             if self.grade[linha][coluna] != AGUA:
                 return False
         return True
 
     def posicionar_navio_aleatorio(self, tipo):
-        tamanho = TAMANHOS[tipo]
+        tamanho = TAMANHO_NAVIO[tipo]
 
         while True:
             horizontal = random.choice([True, False])
@@ -37,15 +45,19 @@ class Tabuleiro:
                 for linha, coluna in posicoes:
                     self.grade[linha][coluna] = NAVIO
                 return
+            
     def posicionar_frota(self):
-        for tipo, quantidade in FROTA_PADRAO.itens():
+
+        for tipo, quantidade in TAMANHO_FROTA.items():
             for _ in range(quantidade):
-                self.adicionar_navio_aleatorio(tipo)
+                self.posicionar_navio_aleatorio(tipo)
 
     def ja_jogada(self, linha, coluna):
-        return self.grade[linha][coluna] in (ACERTO, TIRO_AGUA)
+
+        return self.grade[linha][coluna] in (ACERTO, AGUA_ACERTADA)
 
     def receber_tiro(self, linha, coluna):
+
         for navio in self.navios:
             if navio.registrar_tiro((linha, coluna)):
                 self.grade[linha][coluna] = ACERTO
@@ -53,16 +65,18 @@ class Tabuleiro:
                     return "afundado", navio
                 return "acerto", navio
 
-        self.grade[linha][coluna] = TIRO_AGUA
+        self.grade[linha][coluna] = AGUA_ACERTADA
         return "agua", None
 
     def todos_afundados(self):
+
         for navio in self.navios:
             if not navio.esta_afundado():
                 return False
         return True
 
     def como_texto(self, mostrar_navios):
+
         linhas = ["   " + " ".join(COLUNAS)]
 
         for indice, linha in enumerate(self.grade):
