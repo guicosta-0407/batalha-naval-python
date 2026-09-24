@@ -55,4 +55,22 @@ class Tabuleiro:
 
         self.grade[linha][coluna] = TIRO_AGUA
         return "agua", None
-                
+
+    def todos_afundados(self):
+        for navio in self.navios:
+            if not navio.esta_afundado():
+                return False
+        return True
+
+    def como_texto(self, mostrar_navios):
+        linhas = ["   " + " ".join(COLUNAS)]
+
+        for indice, linha in enumerate(self.grade):
+            simbolos = []
+            for celula in linha:
+                if celula == NAVIO and not mostrar_navios:
+                    simbolos.append(AGUA)
+                else:
+                    simbolos.append(celula)
+            linhas.append(f"{indice + 1:2d} " + " ".join(simbolos))
+        return "\n".join(linhas)
