@@ -19,3 +19,12 @@ def converter_coordenada(coordenada):
         raise ValueError("Fora do tabuleiro. Colunas A-J, linhas 1-10.")
 
     return linha, coluna
+
+def coordenada_para_texto(linha, coluna):
+    return f"{chr(coluna + ord('A'))}{linha + 1}" #converte  (4,2) em D3
+
+def formatar_tempo(segundos):
+    segundos = int(segundos)
+    minutos_totais, segundos_restantes = divmod(segundos, 60)
+    horas, minutos_restantes = divmod(minutos_totais, 60)
+    return f"{horas:02d}:{minutos_restantes:02d}:{segundos_restantes:02d}"
