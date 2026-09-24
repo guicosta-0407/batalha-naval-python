@@ -1,4 +1,4 @@
-from utils import TAMANHO_TABULEIRO, AGUA
+from utils import TAMANHO_TABULEIRO, AGUA,NAVIO, TAMANHOS, FROTA_PADRAO, ACERTO, TIRO_AGUA #adicionando as constantes que eu tinha esquecido
 from navios import Navio
 import random
 
@@ -37,3 +37,22 @@ class Tabuleiro:
                 for linha, coluna in posicoes:
                     self.grade[linha][coluna] = NAVIO
                 return
+    def posicionar_frota(self):
+        for tipo, quantidade in FROTA_PADRAO.itens():
+            for _ in range(quantidade):
+                self.adicionar_navio_aleatorio(tipo)
+
+    def ja_jogada(self, linha, coluna):
+        return self.grade[linha][coluna] in (ACERTO, TIRO_AGUA)
+
+    def receber_tiro(self, linha, coluna):
+        for navio in self.navios:
+            if navio.registrar_tiro((linha, coluna)):
+                self.grade[linha][coluna] = ACERTO
+                if navio.esta_afundado():
+                    return "afundado", navio
+                return "acerto", navio
+
+        self.grade[linha][coluna] = TIRO_AGUA
+        return "agua", None
+                
