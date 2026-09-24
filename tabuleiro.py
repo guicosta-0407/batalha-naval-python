@@ -24,10 +24,16 @@ class Tabuleiro:
             linha = random.randrange(TAMANHO_TABULEIRO)
             coluna = random.randrange(TAMANHO_TABULEIRO)
 
-        for i in range(tamanho):
-            if horizontal:
-                posicoes.append((linha, coluna + i))
-            else:
-                posicoes.append((linha + i, coluna))
+            posicoes = []
+            for i in range(tamanho):
+                if horizontal:
+                    posicoes.append((linha, coluna + i))
+                else:
+                    posicoes.append((linha + i, coluna))
 
-        if self.pode_posicionar(posicoes):
+            if self.pode_posicionar(posicoes):
+                navio = Navio(tipo, posicoes)
+                self.navios.append(navio)
+                for linha, coluna in posicoes:
+                    self.grade[linha][coluna] = NAVIO
+                return
