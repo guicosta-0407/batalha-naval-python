@@ -1,6 +1,6 @@
 TAMANHO_TABULEIRO = 10
 COLUNAS = "ABCDEFGHIJ"
-AGUA, NAVIO, ACERTO, AGUA_ACERTADA = "~", "N", "X", "O"
+AGUA, NAVIO, ACERTO, AGUA_ACERTADA, NAVIO_AFUNDADO = "~", "N", "X", "O", "#"
 TAMANHO_FROTA = {"grande":2, "pequeno": 3}
 TAMANHO_NAVIO = {"pequeno": 2, "grande": 4}
 

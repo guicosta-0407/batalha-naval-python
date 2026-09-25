@@ -1,6 +1,8 @@
+import time
+
 from jogador import Jogador
 from computador import Computador
-
+from utils import coordenada_para_texto, formatar_tempo
 
 def jogar_partida(modo):
 
@@ -15,22 +17,43 @@ def jogar_partida(modo):
 
     atual, outro = j1, j2
 
+    historico = []
+    inicio = time.monotonic()
+
     while True:
         print(f"\n--- Vez de {atual.nome} ---")
         print(outro.tabuleiro.como_texto(False))
 
         linha, coluna = atual.escolher_jogada(outro)
         resultado, navio = outro.tabuleiro.receber_tiro(linha, coluna)
+        historico.append({
+            "jogador": atual.nome,
+            "coord": coordenada_para_texto(linha, coluna),
+            "resultado": resultado,
+        })
         atual.tiros_dados.add((linha, coluna))
 
-        print(f"{atual.nome} jogou e o resultado foi: {resultado}")
+        if resultado == "agua":
+            print("Água! Nenhum navio atingido nessa pocição.")
+        elif resultado == "acerto":
+            print("Acerto! Voce atingiu um navio inimigo.")
+        else:
+            print(f"Navio afundado! Você destruiu um navio {navio.tipo} do adversário.")
 
         if outro.tabuleiro.todos_afundados():
             print(f"\n{atual.nome} venceu!")
+            duracao = time.monotonic() - inicio
+            print(f"\n{'=' * 50}")
+            print("FIM DE JOGO")
+            print(f"{'=' * 50}")
+            print(f"Vencedor: {atual.nome}")
+            print(f"Total de jogadas: {len(historico)}")
+            print(f"Tempo de partida: {formatar_tempo(duracao)}")
             break
 
         if resultado == "agua":
             atual, outro = outro, atual
 
 if __name__ == "__main__":
-    jogar_partida(1)
+    from menu import iniciar
+    iniciar()

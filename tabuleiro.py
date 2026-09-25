@@ -1,6 +1,6 @@
 from utils import (
     TAMANHO_TABULEIRO, COLUNAS, AGUA, NAVIO, ACERTO, AGUA_ACERTADA,
-    TAMANHO_NAVIO, TAMANHO_FROTA
+    TAMANHO_NAVIO, TAMANHO_FROTA, NAVIO_AFUNDADO
 ) #adicionando as constantes que eu tinha esquecido
 from navios import Navio
 import random
@@ -62,6 +62,8 @@ class Tabuleiro:
             if navio.registrar_tiro((linha, coluna)):
                 self.grade[linha][coluna] = ACERTO
                 if navio.esta_afundado():
+                    for pos_linha, pos_coluna in navio.posicoes:
+                        self.grade[pos_linha][pos_coluna] = NAVIO_AFUNDADO
                     return "afundado", navio
                 return "acerto", navio
 
