@@ -1,4 +1,7 @@
 from main import jogar_partida
+from tabuleiro import Tabuleiro
+from utils import converter_coordenada
+
 
 def exibir_menu_principal():
 
@@ -49,3 +52,49 @@ def iniciar():
         elif opcao == "5":
             print("Até a próxima!")
             break
+
+def escolher_e_mover_navio(jogador):
+
+    while True:
+        texto = input("Numero do navio a mover: ").strip()
+        total = len(jogador.tabuleiro.navios)
+        if texto.isdigit() and 1 <= int(texto) <= total:
+            navio = jogador.tabuleiro.navios[int(texto) - 1]
+            break
+        print("Numero invalido.")
+
+    while True:
+        texto = input("Nova coordenada inicial (ex.: C5): ")
+        try:
+            linha, coluna = converter_coordenada(texto)
+        except ValueError as erro:
+            print(erro)
+            continue
+
+        if jogador.tabuleiro.mover_navio(navio, linha, coluna):
+            return
+        print("Essa posicao nao cabe ou esta ocupada. Tente outra.")
+
+def confirmar_posicionamento(jogador):
+
+    jogador.tabuleiro.posicionar_frota()
+
+    while True:
+        print(f"\nFrota de {jogador.nome}:")
+        print(jogador.tabuleiro.como_texto(True))
+        for descricao in jogador.tabuleiro.listar_navios():
+            print(descricao)
+
+        print("[1] Confirmar  [2] Sortear tudo novamente  "
+              "[3] Mover um navio")
+        opcao = input(">> ").strip()
+
+        if opcao == "1":
+            return
+        elif opcao == "2":
+            jogador.tabuleiro = Tabuleiro()
+            jogador.tabuleiro.posicionar_frota()
+        elif opcao == "3":
+            escolher_e_mover_navio(jogador)
+        else:
+            print("Opcao invalida.")
