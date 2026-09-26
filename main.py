@@ -21,6 +21,11 @@ def jogar_partida(modo):
     inicio = time.monotonic()
 
     while True:
+
+        if modo == 2:
+            input(f"\nVez de {atual.nome}. Pressione ENTER quando estiver "
+              "pronto (e o outro jogador nao estiver olhando)...")
+            limpar_tela()
         print(f"\n--- Vez de {atual.nome} ---")
         print(outro.tabuleiro.como_texto(False))
 
@@ -53,6 +58,18 @@ def jogar_partida(modo):
 
         if resultado == "agua":
             atual, outro = outro, atual
+
+def mostrar_tabuleiros(jogador, adversario):
+    
+    linhas_proprio = jogador.tabuleiro.como_texto(True).split("\n")
+    linhas_inimigo = adversario.tabuleiro.como_texto(False).split("\n")
+
+    titulo_esquerda = f"SEU TABULEIRO ({jogador.nome})"
+    titulo_direita = f"TABULEIRO INIMIGO ({adversario.nome})"
+    print(f"\n{titulo_esquerda:<24}   {titulo_direita}")
+
+    for linha_prop, linha_inim in zip(linhas_proprio, linhas_inimigo):
+        print(f"{linha_prop:<24}   {linha_inim}")
 
 if __name__ == "__main__":
     from menu import iniciar
