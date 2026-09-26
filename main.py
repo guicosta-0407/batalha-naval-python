@@ -2,7 +2,7 @@ import time
 
 from jogador import Jogador
 from computador import Computador
-from utils import coordenada_para_texto, formatar_tempo
+from utils import coordenada_para_texto, formatar_tempo, limpar_tela
 
 def jogar_partida(modo):
 
@@ -12,8 +12,16 @@ def jogar_partida(modo):
     else:
         j2 = Jogador("Jogador 2")
 
-    j1.tabuleiro.posicionar_frota()
-    j2.tabuleiro.posicionar_frota()
+    from menu import confirmar_posicionamento
+
+    confirmar_posicionamento(j1)
+    if modo == 2:
+        limpar_tela()
+        input(f"\nVez de {j2.nome} posicionar a frota. Pressione ENTER quando pronto...")
+        limpar_tela()
+        confirmar_posicionamento(j2)
+    else:
+        j2.tabuleiro.posicionar_frota()
 
     atual, outro = j1, j2
 
@@ -23,11 +31,10 @@ def jogar_partida(modo):
     while True:
 
         if modo == 2:
-            input(f"\nVez de {atual.nome}. Pressione ENTER quando estiver "
-              "pronto (e o outro jogador nao estiver olhando)...")
+            input(f"\nVez de {atual.nome}. Pressione ENTER quando estiver pronto (e o outro jogador nao estiver olhando)...")
             limpar_tela()
         print(f"\n--- Vez de {atual.nome} ---")
-        print(outro.tabuleiro.como_texto(False))
+        mostrar_tabuleiros(atual, outro)
 
         linha, coluna = atual.escolher_jogada(outro)
         resultado, navio = outro.tabuleiro.receber_tiro(linha, coluna)
