@@ -1,3 +1,5 @@
+import os
+
 TAMANHO_TABULEIRO = 10
 COLUNAS = "ABCDEFGHIJ"
 AGUA, NAVIO, ACERTO, AGUA_ACERTADA, NAVIO_AFUNDADO = "~", "N", "X", "O", "#"
@@ -30,3 +32,7 @@ def formatar_tempo(segundos):
     minutos_totais, segundos_restantes = divmod(segundos, 60)
     horas, minutos_restantes = divmod(minutos_totais, 60)
     return f"{horas:02d}:{minutos_restantes:02d}:{segundos_restantes:02d}"
+
+def limpar_tela():
+
+    os.system("cls" if os.name == "nt" else "clear")
