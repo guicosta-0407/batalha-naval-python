@@ -1,6 +1,6 @@
 from utils import (
     TAMANHO_TABULEIRO, COLUNAS, AGUA, NAVIO, ACERTO, AGUA_ACERTADA,
-    TAMANHO_NAVIO, TAMANHO_FROTA, NAVIO_AFUNDADO
+    TAMANHO_NAVIO, TAMANHO_FROTA, NAVIO_AFUNDADO, coordenada_para_texto
 ) #adicionando as constantes que eu tinha esquecido
 from navios import Navio
 import random
@@ -90,3 +90,44 @@ class Tabuleiro:
                     simbolos.append(celula)
             linhas.append(f"{indice + 1:2d} " + " ".join(simbolos))
         return "\n".join(linhas)
+
+    def listar_navios(self):
+
+        descricoes = []
+        for indice, navio in enumerate(self.navios, start=1):
+            mesma_linha = navio.posicoes[0][0] == navio.posicoes[1][0]
+            orientacao = "horizontal" if mesma_linha else "vertical"
+            coords = [
+                coordenada_para_texto(l, c) for l, c in navio.posicoes
+            ]
+            descricoes.append(
+                f"{indice} - {navio.tipo} ({orientacao}): "
+                f"{', '.join(coords)}"
+            )
+        return descricoes
+
+    def mover_navio(self, navio, linha, coluna):
+
+        mesma_linha = navio.posicoes[0][0] == navio.posicoes[1][0]
+        tamanho = len(navio.posicoes)
+
+        posicoes_antigas = navio.posicoes
+        for pos_linha, pos_coluna in posicoes_antigas:
+            self.grade[pos_linha][pos_coluna] = AGUA
+
+        novas_posicoes = []
+        for i in range(tamanho):
+            if mesma_linha:
+                novas_posicoes.append((linha, coluna + i))
+            else:
+                novas_posicoes.append((linha + i, coluna))
+
+        if self.pode_posicionar(novas_posicoes):
+            navio.posicoes = novas_posicoes
+            for pos_linha, pos_coluna in novas_posicoes:
+                self.grade[pos_linha][pos_coluna] = NAVIO
+            return True
+
+        for pos_linha, pos_coluna in posicoes_antigas:
+            self.grade[pos_linha][pos_coluna] = NAVIO
+        return False
