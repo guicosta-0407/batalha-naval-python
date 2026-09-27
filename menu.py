@@ -1,6 +1,8 @@
 from main import jogar_partida
 from tabuleiro import Tabuleiro
 from utils import converter_coordenada
+from estatisticas import exibir as exibir_estatisticas
+from replay import reproduzir
 
 
 def exibir_menu_principal():
@@ -44,9 +46,9 @@ def iniciar():
             if modo != "0":
                 jogar_partida(int(modo))
         elif opcao == "2":
-            pass
+            exibir_estatisticas()
         elif opcao == "3":
-            pass
+            reproduzir()
         elif opcao == "4":
             print("\nDesenvolvido por Guilherme Marra - CEFET-MG\n")
         elif opcao == "5":
