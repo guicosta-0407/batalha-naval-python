@@ -3,6 +3,8 @@ import time
 from jogador import Jogador
 from computador import Computador
 from utils import coordenada_para_texto, formatar_tempo, limpar_tela
+from replay import salvar_partida
+from estatisticas import registrar_partida
 
 def jogar_partida(modo):
 
@@ -55,6 +57,12 @@ def jogar_partida(modo):
         if outro.tabuleiro.todos_afundados():
             print(f"\n{atual.nome} venceu!")
             duracao = time.monotonic() - inicio
+            salvar_partida(historico, atual.nome, duracao)
+            registrar_partida(
+                venceu=True,
+                tiros=len(atual.tiros_dados),
+                acertos=atual.acertos,
+            )
             print(f"\n{'=' * 50}")
             print("FIM DE JOGO")
             print(f"{'=' * 50}")
