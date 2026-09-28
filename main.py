@@ -46,6 +46,8 @@ def jogar_partida(modo):
             "resultado": resultado,
         })
         atual.tiros_dados.add((linha, coluna))
+        if resultado != "agua":
+            atual.acertos +=1
 
         if resultado == "agua":
             print("Água! Nenhum navio atingido nessa pocição.")
@@ -59,9 +61,9 @@ def jogar_partida(modo):
             duracao = time.monotonic() - inicio
             salvar_partida(historico, atual.nome, duracao)
             registrar_partida(
-                venceu=True,
-                tiros=len(atual.tiros_dados),
-                acertos=atual.acertos,
+                venceu=(atual is j1),
+                tiros=len(j1.tiros_dados),
+                acertos=j1.acertos,
             )
             print(f"\n{'=' * 50}")
             print("FIM DE JOGO")

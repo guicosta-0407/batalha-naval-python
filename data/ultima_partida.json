@@ -1,0 +1,671 @@
+{
+  "vencedor": "Jogador 1",
+  "duracao": 87.18079940000098,
+  "jogadas": [
+    {
+      "jogador": "Jogador 1",
+      "coord": "C1",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "A1",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "A1",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "H3",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "A2",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "J8",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "A3",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "B8",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "A4",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "C1",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "A5",
+      "resultado": "acerto"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "A6",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "F6",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "A7",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "A9",
+      "resultado": "acerto"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "J9",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "A8",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "J5",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "A9",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "D8",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "A10",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "I5",
+      "resultado": "acerto"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "C10",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "B1",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "H1",
+      "resultado": "acerto"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "A5",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "B2",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "H4",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "B3",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "I10",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "B4",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "H8",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "B5",
+      "resultado": "acerto"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "B6",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "D9",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "B7",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "I4",
+      "resultado": "acerto"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "E9",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "B8",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "A3",
+      "resultado": "acerto"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "D3",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "B9",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "I1",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "B10",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "F3",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "C2",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "F7",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "C3",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "C4",
+      "resultado": "acerto"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "J1",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "C4",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "C3",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "C5",
+      "resultado": "acerto"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "C6",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "A6",
+      "resultado": "acerto"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "H9",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "C7",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "G2",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "C8",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "D1",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "C9",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "B3",
+      "resultado": "afundado"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "C9",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "C10",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "E10",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "D1",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "C5",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "D2",
+      "resultado": "acerto"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "D3",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "D2",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "D4",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "G4",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "D5",
+      "resultado": "afundado"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "D6",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "J10",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "D7",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "C7",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "D8",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "A10",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "D9",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "C2",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "D10",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "G9",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "E1",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "B7",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "E2",
+      "resultado": "afundado"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "E3",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "J3",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "E4",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "E2",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "E5",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "G10",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "E6",
+      "resultado": "acerto"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "E7",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "A2",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "E8",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "D10",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "E9",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "D5",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "E10",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "E7",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "F6",
+      "resultado": "afundado"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "F1",
+      "resultado": "acerto"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "F2",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "B4",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "G1",
+      "resultado": "acerto"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "H1",
+      "resultado": "acerto"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "I1",
+      "resultado": "afundado"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "H2",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "H7",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "H3",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "J7",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "H4",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "D7",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "H5",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "G7",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "H6",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "C6",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "H7",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "H5",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "H8",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "A8",
+      "resultado": "acerto"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "E8",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "H9",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "F2",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "H10",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "F4",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "G2",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "I9",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "G3",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Computador",
+      "coord": "A4",
+      "resultado": "agua"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "G4",
+      "resultado": "acerto"
+    },
+    {
+      "jogador": "Jogador 1",
+      "coord": "G5",
+      "resultado": "afundado"
+    }
+  ]
+}
