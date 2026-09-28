@@ -39,17 +39,3 @@ def exibir(nome):
     print(f"Tiros dados: {stats['tiros']}")
     print(f"Acertos: {stats['acertos']}")
     print(f"Aproveitamento: {aproveitamento:.1f}%")
-
-if __name__ == "__main__":
-    # simula um jogador chamado "Gui" jogando 2 partidas
-    registrar_partida("Gui", venceu=True, tiros=32, acertos=14)
-    registrar_partida("Gui", venceu=False, tiros=27, acertos=11)
-
-    # simula outro jogador com nome diferente
-    registrar_partida("Maria", venceu=True, tiros=25, acertos=14)
-
-    exibir("Gui")
-    print()
-    exibir("Maria")
-    print()
-    exibir("NomeQueNuncaJogou")   # deve vir tudo zerado, sem quebrar
