@@ -4,16 +4,18 @@ CAMINHO_ESTATISTICAS = DIR_DATA / "estatisticas.json"
 
 PADRAO = {"partidas": 0, "vitorias": 0, "tiros": 0, "acertos": 0}
 
-def registrar_partida(venceu, tiros, acertos):
+def registrar_partida(nome, venceu, tiros, acertos):
 
-    dados = carregar_json(CAMINHO_ESTATISTICAS, PADRAO.copy())
+    dados = carregar_json(CAMINHO_ESTATISTICAS, {})
+    stats = dados.get(nome, PADRAO.copy())
 
-    dados["partidas"] += 1
-    dados["tiros"] += tiros
-    dados["acertos"] += acertos
+    stats["partidas"] += 1
+    stats["tiros"] += tiros
+    stats["acertos"] += acertos
     if venceu:
-        dados["vitorias"] += 1
+        stats["vitorias"] += 1
 
+    dados[nome] = stats
     salvar_json(CAMINHO_ESTATISTICAS, dados)
 
 def calcular_aproveitamento(acertos, tiros):
@@ -23,16 +25,31 @@ def calcular_aproveitamento(acertos, tiros):
     return (acertos / tiros) * 100
 
 
-def exibir():
+def exibir(nome):
 
-    dados = carregar_json(CAMINHO_ESTATISTICAS, PADRAO.copy())
-    aproveitamento = calcular_aproveitamento(dados["acertos"], dados["tiros"])
+    dados = carregar_json(CAMINHO_ESTATISTICAS, {})
+    stats = dados.get(nome, PADRAO.copy())
+    aproveitamento = calcular_aproveitamento(stats["acertos"], stats["tiros"])
 
     print("=" * 50)
-    print("ESTATISTICAS")
+    print(f"ESTATISTICAS - {nome}")
     print("=" * 50)
-    print(f"Partidas jogadas: {dados['partidas']}")
-    print(f"Vitorias: {dados['vitorias']}")
-    print(f"Tiros dados: {dados['tiros']}")
-    print(f"Acertos: {dados['acertos']}")
+    print(f"Partidas jogadas: {stats['partidas']}")
+    print(f"Vitorias: {stats['vitorias']}")
+    print(f"Tiros dados: {stats['tiros']}")
+    print(f"Acertos: {stats['acertos']}")
     print(f"Aproveitamento: {aproveitamento:.1f}%")
+
+if __name__ == "__main__":
+    # simula um jogador chamado "Gui" jogando 2 partidas
+    registrar_partida("Gui", venceu=True, tiros=32, acertos=14)
+    registrar_partida("Gui", venceu=False, tiros=27, acertos=11)
+
+    # simula outro jogador com nome diferente
+    registrar_partida("Maria", venceu=True, tiros=25, acertos=14)
+
+    exibir("Gui")
+    print()
+    exibir("Maria")
+    print()
+    exibir("NomeQueNuncaJogou")   # deve vir tudo zerado, sem quebrar

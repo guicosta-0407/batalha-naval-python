@@ -8,11 +8,14 @@ from estatisticas import registrar_partida
 
 def jogar_partida(modo):
 
-    j1 = Jogador("Jogador 1")
+    nome_j1 = input("Digite o nome do Jogador 1: ").strip() or "Jogador 1"
+    j1 = Jogador(nome_j1)
+
     if modo == 1:
         j2 = Computador("Computador")
     else:
-        j2 = Jogador("Jogador 2")
+        nome_j2 = input("Digite o nome do Jogador 2: ").strip() or "Jogador 2"
+        j2 = Jogador(nome_j2)
 
     from menu import confirmar_posicionamento
 
@@ -36,7 +39,8 @@ def jogar_partida(modo):
             input(f"\nVez de {atual.nome}. Pressione ENTER quando estiver pronto (e o outro jogador nao estiver olhando)...")
             limpar_tela()
         print(f"\n--- Vez de {atual.nome} ---")
-        mostrar_tabuleiros(atual, outro)
+        if not isinstance(atual, Computador):
+            mostrar_tabuleiros(atual, outro)
 
         linha, coluna = atual.escolher_jogada(outro)
         resultado, navio = outro.tabuleiro.receber_tiro(linha, coluna)
@@ -48,6 +52,9 @@ def jogar_partida(modo):
         atual.tiros_dados.add((linha, coluna))
         if resultado != "agua":
             atual.acertos +=1
+
+        if hasattr(atual, "registrar_resultado"):
+            atual.registrar_resultado((linha, coluna), resultado)
 
         if resultado == "agua":
             print("Água! Nenhum navio atingido nessa pocição.")
@@ -61,9 +68,10 @@ def jogar_partida(modo):
             duracao = time.monotonic() - inicio
             salvar_partida(historico, atual.nome, duracao)
             registrar_partida(
-                venceu=(atual is j1),
-                tiros=len(j1.tiros_dados),
-                acertos=j1.acertos,
+                nome=atual.nome,
+                venceu=True,
+                tiros=len(atual.tiros_dados),
+                acertos=atual.acertos,
             )
             print(f"\n{'=' * 50}")
             print("FIM DE JOGO")

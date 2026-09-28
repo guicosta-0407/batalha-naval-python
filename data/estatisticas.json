@@ -1,6 +1,26 @@
 {
-  "partidas": 1,
-  "vitorias": 1,
-  "tiros": 69,
-  "acertos": 14
+  "Jogador 1": {
+    "partidas": 2,
+    "vitorias": 1,
+    "tiros": 55,
+    "acertos": 23
+  },
+  "Computador": {
+    "partidas": 1,
+    "vitorias": 0,
+    "tiros": 28,
+    "acertos": 10
+  },
+  "Gui": {
+    "partidas": 8,
+    "vitorias": 4,
+    "tiros": 236,
+    "acertos": 100
+  },
+  "Maria": {
+    "partidas": 4,
+    "vitorias": 4,
+    "tiros": 100,
+    "acertos": 56
+  }
 }

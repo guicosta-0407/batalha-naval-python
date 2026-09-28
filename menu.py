@@ -46,7 +46,8 @@ def iniciar():
             if modo != "0":
                 jogar_partida(int(modo))
         elif opcao == "2":
-            exibir_estatisticas()
+            nome = input("Digite o nome do jogador: ").strip() or "Jogador 1"
+            exibir_estatisticas(nome)
         elif opcao == "3":
             reproduzir()
         elif opcao == "4":
